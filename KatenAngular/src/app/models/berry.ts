@@ -1,21 +1,21 @@
 
-export interface NamedAPIResource {
+export interface INamedAPIResource {
     
     name: string;
     url: string;
   }
   
 
-export interface Name {
+export interface IName {
     name: string;
-    language: NamedAPIResource;
+    language: INamedAPIResource;
   }
   
-  export interface NamedAPIResourceList {
+  export interface INamedAPIResourceList {
     count: number;
     next: string | null;
     previous: string | null;
-    results: NamedAPIResource[];
+    results: INamedAPIResource[];
   }
   
  
@@ -23,7 +23,7 @@ export interface Name {
     url: string;
   }
 
-export interface Berry {
+export interface IBerry {
   id: number;
   name: string;
   growth_time: number;
@@ -32,33 +32,33 @@ export interface Berry {
   size: number;
   smoothness: number;
   soil_dryness: number;
-  firmness: NamedAPIResource;
-  flavors: BerryFlavorMap[];
-  item: NamedAPIResource;
-  natural_gift_type: NamedAPIResource;
+  firmness: INamedAPIResource;
+  flavors: IBerryFlavorMap[];
+  item: INamedAPIResource;
+  natural_gift_type: INamedAPIResource;
 }
 
-export interface BerryFlavorMap {
+export interface IBerryFlavorMap {
   potency: number;
-  flavor: NamedAPIResource;
+  flavor: INamedAPIResource;
 }
 
-export interface BerryFlavor {
+export interface IBerryFlavor {
   id: number;
   name: "spicy" | "dry" | "sweet" | "bitter" | "sour";
-  berries: FlavorBerryMap[];
-  contest_type: NamedAPIResource;
-  names: Name[];
+  berries: IFlavorBerryMap[];
+  contest_type: INamedAPIResource;
+  names: IName[];
 }
 
-export interface FlavorBerryMap {
+export interface IFlavorBerryMap {
   potency: number;
-  berry: NamedAPIResource;
+  berry: INamedAPIResource;
 }
 
-export interface BerryFirmness {
+export interface IBerryFirmness {
   id: number;
   name: "very-soft" | "soft" | "hard" | "very-hard" | "super-hard";
-  berries: NamedAPIResource[];
-  names: Name[];
+  berries: INamedAPIResource[];
+  names: IName[];
 }
