@@ -8,9 +8,12 @@ import { Observable } from 'rxjs';import { BerryCheck } from '../models/berriesM
   providedIn: 'root'
 })
 export class BerryService {
-
   constructor(private http: HttpClient) { }
   getAll(): Observable<BerryCheck>{
     return this.http.get<BerryCheck>('https://pokeapi.co/api/v2/berry')
+  }
+
+  getNext(url:string):Observable<BerryCheck>{
+    return this.http.get<BerryCheck>(url)
   }
 }

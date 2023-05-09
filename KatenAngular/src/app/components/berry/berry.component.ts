@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { BerryCheck } from 'src/app/models/berriesModel';
+import { BerryCheck, Result } from 'src/app/models/berriesModel';
 import { IBerry } from 'src/app/models/berry';
 
 @Component({
@@ -8,7 +8,7 @@ import { IBerry } from 'src/app/models/berry';
   styleUrls: ['./berry.component.css']
 })
 export class BerryComponent {
-  @Input() berryCheck: BerryCheck
+  @Input() berryCheck: Result
 
   details = false
 }

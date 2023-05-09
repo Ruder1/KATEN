@@ -13,17 +13,17 @@ import { BerryCheck } from './models/berriesModel';
 export class AppComponent implements OnInit {
   title = 'KatenAngular';
   berry:BerryCheck
-
+  url:string = 'https://pokeapi.co/api/v2/berry'
   constructor(
     public berryService: BerryService) {
   }
 
   ngOnInit(): void 
   {
-    this.berryService.getAll().subscribe(berries=>{
+    this.berryService.getNext(this.url).subscribe(berries=>{
       console.log(berries)
       this.berry = berries
     })
-    console.log(this.berry)
+    console.log(this.url)
   }
 }

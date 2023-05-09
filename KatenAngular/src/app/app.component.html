@@ -1,14 +1,16 @@
 <h1 class="font-bold mb-2 text-center text-lg">{{ title | titlecase }}</h1>
-<!-- <p>{{berry.count}}</p> -->
-<div> 
-  <app-berry [berryCheck]="berry"></app-berry>
-<!-- <app-berry
-    *ngFor="let berry of berry"
-    [berry]="berry"
-  >
-  </app-berry> -->
- </div>
-
+<div class="py-4 px-6 border rounded flex items-center flex-col">
+  <div class="grid md:grid-cols-4  ">
+  <!-- <div class="grid grid-cols-1 gap-x-2 gap-y-10 sm:grid-cols-2 sm:gap-y-5 md:grid-cols-4 [&:not(:focus-visible)]:focus:outline-none">   -->
+    <app-berry 
+      *ngFor="let berries of berry.results" 
+      [berryCheck]="berries">
+    </app-berry>
+  </div>
+</div>
+<div class="items-center flex-col">
+  <button >Следующая страница</button>
+</div>
 
 
 <!-- <app-modal *ngIf="modalService.isVisible$ | async" title="Create new Product">
