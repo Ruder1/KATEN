@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpParams} from '@angular/common/http'
+import {HttpClient} from '@angular/common/http'
 import {IBerry} from '../models/berry'
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs';import { BerryCheck } from '../models/berriesModel';
+
 
 @Injectable({
   providedIn: 'root'
@@ -9,23 +10,7 @@ import { Observable } from 'rxjs';
 export class BerryService {
 
   constructor(private http: HttpClient) { }
-
-  // getAll(): Observable<IBerry[]> {
-  //   return this.http.get<IBerry[]>('https://pokeapi.co/api/v2/berry', {
-  //     params: new HttpParams({
-  //       fromObject: {limit: 5}
-  //     })
-  //   })
-  // }
-
-  getAll(): Observable<IBerry[]>{
-    return this.http.get<IBerry[]>('https://pokeapi.co/api/v2/berry',{
-      params: new HttpParams().append('limit',5)
-    })
+  getAll(): Observable<BerryCheck>{
+    return this.http.get<BerryCheck>('https://pokeapi.co/api/v2/berry')
   }
-
-  // getAll(){
-  //   fetch('https://pokeapi.co/api/v2/berry/1')
-  //   .then(res => res.json())
-  //   .then(console.log)
 }

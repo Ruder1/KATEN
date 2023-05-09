@@ -1,6 +1,7 @@
+
 <div class="py-4 px-6 border rounded flex items-center flex-col mb-2">
     
-    <h2 class="mb-2 text-md text-center">{{ berry.name }}</h2>
+    <h2 class="mb-2 text-md text-center">{{ berryCheck.count }}</h2>
   
     <button
       class="border py-2 px-4 rounded"
@@ -14,9 +15,9 @@
     </button>
   
     <div *ngIf="details">
-      <p>{{ berry.growth_time }}</p>
+      <p>{{ berryCheck.next}}</p>
       <p>Rate: <span [ngStyle]="{fontWeight: 'bold'}">
-        {{ berry.id | number:'1.2-4' }}
+        {{ berryCheck.previous | number:'1.2-4' }}
       </span></p>
     </div>
 </div> 
