@@ -1,6 +1,14 @@
 <div class="py-6 px-8 border rounded flex items-center flex-col">
-  <div class="grid md:grid-cols-4  ">
-    <div class="py-4 px-6 border rounded flex items-center flex-col mb-2"
+  <div class="flex flex-col text-center mb-2 text-lg">
+    <input 
+      type="text"
+      class="box-content h-6 w-32 p-4 border-2 rounded border-gray-500 bg-slate-100 text-center" 
+      placeholder="Chosen Berry..."
+      value="{{chosenBerry}}"
+      >
+    </div>
+  <div class="grid md:grid-cols-4 gap-4 ">
+    <div class="py-4 px-6 border border-gray-500 bg-slate-300 rounded flex items-center flex-col mb-2"
       *ngFor="let berry of berryCheck; let i = index">
       <button class="" 
         (click)="modalService.open()"
@@ -13,7 +21,9 @@
     <app-modal 
       *ngIf="modalService.isVisible$ | async" 
       title="Berry info" 
-      [berryModel]="berryModel">
+      [berryModel]="berryModel"
+      (onChosen)="onChosen($event)">
     </app-modal>
     </div>
+  </div>
   </div>

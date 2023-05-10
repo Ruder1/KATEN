@@ -11,7 +11,7 @@ export interface IName {
     language: INamedAPIResource;
   }
   
-  export interface INamedAPIResourceList {
+export interface INamedAPIResourceList {
     count: number;
     next: string | null;
     previous: string | null;

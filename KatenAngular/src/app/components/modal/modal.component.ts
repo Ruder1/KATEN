@@ -1,6 +1,5 @@
-import { Component, Inject, Input, OnInit } from '@angular/core';
+import { Component, Output, Input, EventEmitter } from '@angular/core';
 import { BerriesModel } from 'src/app/models/berriesModel';
-import { BerryService } from 'src/app/services/berry.service';
 import { ModalService } from 'src/app/services/modal.service';
 
 @Component({
@@ -12,16 +11,12 @@ import { ModalService } from 'src/app/services/modal.service';
 export class ModalComponent {
 
   @Input() berryModel: BerriesModel;
+  @Output() onChosen = new EventEmitter<any>();
 
-  constructor(public modalService: ModalService) { }
-
+  constructor(public modalService: ModalService) { } 
   
-  // ngOnInit(): void {
-  //   this.berryService.getNext(this.url).subscribe(berries=>
-  //     {
-  //       this.berryModel = berries
-  //       console.log(this.url)
-  //     })
-  // }
-
+  chosen(berry:BerriesModel)
+  {
+    this.onChosen.emit(berry)
+  }
 }

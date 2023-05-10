@@ -10,8 +10,8 @@ import { ModalService } from 'src/app/services/modal.service';
 })
 export class BerryComponent{
   @Input() berryCheck: Result[]
-  @Output() onChanged = new EventEmitter<any>();
   berryModel:BerriesModel
+  chosenBerry:string
 
   constructor
   (public modalService:ModalService,
@@ -23,10 +23,10 @@ export class BerryComponent{
     this.berryService.getNext(this.berryCheck[number].url).subscribe(berries => {
       this.berryModel = berries})
   }
+  
+  onChosen(berry:BerriesModel)
+  {
+    this.chosenBerry = berry.name
+  }
+
 }
-//Попробовать через $event
-//getBerry(number:nubmer)
-//{
-//   this.berryService.getNext(this.berryCheck[number].url).subscribe(berries => {
-//     this.berryModel = berries
-// }
