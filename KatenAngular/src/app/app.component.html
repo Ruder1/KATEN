@@ -1,23 +1,29 @@
-<h1 class="font-bold mb-2 text-center text-lg">{{ title | titlecase }}</h1>
-<div class="py-4 px-6 border rounded flex items-center flex-col">
-  <div class="grid md:grid-cols-4  ">
-  <!-- <div class="grid grid-cols-1 gap-x-2 gap-y-10 sm:grid-cols-2 sm:gap-y-5 md:grid-cols-4 [&:not(:focus-visible)]:focus:outline-none">   -->
-    <app-berry 
+<h1 
+  class="font-bold mb-2 text-center text-lg">
+  {{ title | titlecase }}
+</h1>
+
+<div class="flex flex-col text-center mb-2 text-lg">
+  <input 
+  type="text"
+   class="box-content h-6 w-32 p-4 border-4 " 
+   placeholder="Chosen Berry...">
+  <div 
+  class="py-6 px-8 border rounded flex items-center flex-col">
+    <div class="grid md:grid-cols-4  ">
+      <app-berry 
       *ngFor="let berries of berry.results" 
       [berryCheck]="berries">
-    </app-berry>
+      </app-berry>
+    </div>
   </div>
 </div>
-<div class="items-center flex-col">
-  <button >Следующая страница</button>
-</div>
+<!-- <div class="items-center flex-col">
+  <button (click)="">Следующая страница</button>
+</div> -->
 
-
-<!-- <app-modal *ngIf="modalService.isVisible$ | async" title="Create new Product">
-  <app-create-product></app-create-product>
-</app-modal> 
-
-<button
-  class="rounded-full bg-red-700 text-white fixed right-5 bottom-5 py-2 px-4"
-  (click)="modalService.open()"
->+</button> -->
+<!-- <app-modal 
+    *ngIf="modalService.isVisible$ | async" 
+    title="Berry info"
+    >      
+</app-modal>  -->

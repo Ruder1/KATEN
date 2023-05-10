@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
-import {IBerry} from '../models/berry'
-import { Observable } from 'rxjs';import { BerryCheck } from '../models/berriesModel';
+import { Observable } from 'rxjs';import {BerryCheck } from '../models/berriesModel';
 
 
 @Injectable({
@@ -13,7 +12,7 @@ export class BerryService {
     return this.http.get<BerryCheck>('https://pokeapi.co/api/v2/berry')
   }
 
-  getNext(url:string):Observable<BerryCheck>{
-    return this.http.get<BerryCheck>(url)
+  getNext(url:string):Observable<any>{
+    return this.http.get<any>(url)
   }
 }

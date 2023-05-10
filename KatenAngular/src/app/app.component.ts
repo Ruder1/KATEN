@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BerryService } from './services/berry.service';
-import { IBerry } from './models/berry';
-import { Observable } from 'rxjs';
-import {berry as data} from './data/berry'
 import { BerryCheck } from './models/berriesModel';
+import { ModalService } from './services/modal.service';
 
 @Component({
   selector: 'app-root',
@@ -13,17 +11,15 @@ import { BerryCheck } from './models/berriesModel';
 export class AppComponent implements OnInit {
   title = 'KatenAngular';
   berry:BerryCheck
-  url:string = 'https://pokeapi.co/api/v2/berry'
   constructor(
-    public berryService: BerryService) {
+    private berryService: BerryService,
+    public modalService:ModalService) {
   }
 
   ngOnInit(): void 
   {
-    this.berryService.getNext(this.url).subscribe(berries=>{
-      console.log(berries)
+    this.berryService.getAll().subscribe(berries=>{
       this.berry = berries
     })
-    console.log(this.url)
   }
 }
