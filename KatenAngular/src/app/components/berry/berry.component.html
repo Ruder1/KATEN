@@ -1,12 +1,19 @@
-<div class="py-4 px-6 border rounded flex items-center flex-col mb-2">
-    <button 
-    class=""
-    (click)="modalService.open()">
-      {{berryCheck.name}}
-    </button>
-</div> 
-<app-modal 
-    *ngIf="modalService.isVisible$ | async" 
-    title="Berry info"
-    [berryModel]="berryModel">      
-</app-modal> 
+<div class="py-6 px-8 border rounded flex items-center flex-col">
+  <div class="grid md:grid-cols-4  ">
+    <div class="py-4 px-6 border rounded flex items-center flex-col mb-2"
+      *ngFor="let berry of berryCheck; let i = index">
+      <button class="" 
+        (click)="modalService.open()"
+        (click)="getBerry(i)"         
+        >
+        {{berry.name}}
+      </button>
+    
+    
+    <app-modal 
+      *ngIf="modalService.isVisible$ | async" 
+      title="Berry info" 
+      [berryModel]="berryModel">
+    </app-modal>
+    </div>
+  </div>

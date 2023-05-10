@@ -1,4 +1,4 @@
-import { Component,Inject,Input,OnInit } from '@angular/core';
+import { Component, Inject, Input, OnInit } from '@angular/core';
 import { BerriesModel } from 'src/app/models/berriesModel';
 import { BerryService } from 'src/app/services/berry.service';
 import { ModalService } from 'src/app/services/modal.service';
@@ -9,15 +9,19 @@ import { ModalService } from 'src/app/services/modal.service';
   styleUrls: ['./modal.component.css']
 })
 
-export class ModalComponent implements OnInit {
+export class ModalComponent {
 
-  @Input() berryModel:BerriesModel
-  
+  @Input() berryModel: BerriesModel;
 
   constructor(public modalService: ModalService) { }
 
-  ngOnInit(): void {
-    
-  }
+  
+  // ngOnInit(): void {
+  //   this.berryService.getNext(this.url).subscribe(berries=>
+  //     {
+  //       this.berryModel = berries
+  //       console.log(this.url)
+  //     })
+  // }
 
 }

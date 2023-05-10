@@ -2,22 +2,18 @@
   class="font-bold mb-2 text-center text-lg">
   {{ title | titlecase }}
 </h1>
-
 <div class="flex flex-col text-center mb-2 text-lg">
   <input 
-  type="text"
-   class="box-content h-6 w-32 p-4 border-4 " 
-   placeholder="Chosen Berry...">
-  <div 
-  class="py-6 px-8 border rounded flex items-center flex-col">
-    <div class="grid md:grid-cols-4  ">
-      <app-berry 
-      *ngFor="let berries of berry.results" 
-      [berryCheck]="berries">
-      </app-berry>
-    </div>
-  </div>
+    type="text"
+    class="box-content h-6 w-32 p-4 border-4 " 
+    placeholder="Chosen Berry..."
+    >
+      
+    <app-berry  
+      [berryCheck]="berry.results">
+    </app-berry>
 </div>
+
 <!-- <div class="items-center flex-col">
   <button (click)="">Следующая страница</button>
 </div> -->
