@@ -1,10 +1,28 @@
 <div class="bg-gray-100">
+
   <h1 class="font-bold mb-2 text-center text-lg">
-  {{ title | titlecase }}
-</h1>
-<app-berry [berryCheck]="berry.results">
-</app-berry>
+    {{ title | titlecase }}
+  </h1>
+
+  <app-berry 
+    [berryCheck]="berry.results">
+  </app-berry>
+
 </div>
-<!-- <div class="items-center flex-col">
-  <button (click)="">Следующая страница</button>
-</div> -->
+
+<div class="flex justify-around flex-row ">
+
+  <div class="">
+    <button (click)="getPreviousArray(berry.previous)">
+      Предыдующий массив
+    </button>
+  </div>
+
+  <div class="">
+    <button class="" (click)="getNextArray(berry.next)">
+      Следующий массив
+    </button>
+  </div>
+ 
+
+</div>

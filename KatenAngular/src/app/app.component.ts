@@ -22,4 +22,19 @@ export class AppComponent implements OnInit {
       this.berry = berries
     })
   }
+
+  getNextArray(url:string)
+  {
+    this.berryService.getNext(url).subscribe(berries=>{
+      this.berry = berries
+    })
+  }
+
+  getPreviousArray(url:string)
+  {
+    this.berryService.getNext(url).subscribe(berries=>{
+      this.berry = berries
+    })
+  }
+
 }
